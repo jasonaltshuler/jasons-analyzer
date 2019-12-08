@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Analyzer
+{% endblock %}
+
+{% block header %}
+    ANALYZER
+{% endblock %}
+
+{% block body %}
+    <div class="body">
+        <div class="explanatory">
+            <p>Please enter or upload English text below, and the number of most frequently used words you would like to see.</p>
+            <p>To upload a file, make sure it is a .docx Word document.</p>
+            <p>A larger text file is recommended, as the more text available, the more meaningful the analysis will be.</p>
+            <p>(Please note that a word will not be returned as a "favorite" if it used less than 3 times, or is one of the 1000 most common English words)</p>
+        </div>
+
+        <form action="/" method="post" enctype="multipart/form-data" class="form-group">
+
+            <div>
+                <input name="thefile" type="file" id="docpicker" class="form-control"
+                    accept=".docx">
+            </div>
+
+            <div>
+                <textarea name="thetext" placeholder="Or copy and paste text in here!" type="text" rows="10" cols="50" class="form-control"></textarea>
+            </div>
+
+            <div>
+                <input name="quantity" placeholder="How many words?" type="number" min="0" required class="form-control">
+            </div>
+            <button class="btn btn-primary" type="submit">Analyze</button>
+        </form>
+
+
+
+
+    </div>
+
+{% endblock %}
